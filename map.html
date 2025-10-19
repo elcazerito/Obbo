@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Carte avec pop-up au-dessus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="relative m-0 p-0">
+
+  <div id="map"></div>
+
+  <div id="locationForm"
+    class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-black/80 backdrop-blur-md text-white rounded-2xl shadow-lg px-6 py-4 space-y-4 z-[9999]">
+    <h3 class="text-lg font-semibold text-center mb-2">Choisissez votre type de localisation</h3>
+
+    <fieldset id="localisationFieldset" class="flex flex-col items-start space-y-4 text-left">
+      <label for="exact" class="cursor-pointer leading-tight w-full">
+        <input type="radio" name="localisation" id="exact" value="exact" class="mr-2 align-middle">
+        Localisation exacte
+        <br>
+        <span class="ml-6 text-sm text-gray-300">Valable 24h</span>
+      </label>
+
+      <label for="approx" class="cursor-pointer leading-tight w-full">
+        <input type="radio" name="localisation" id="approx" value="approx" class="mr-2 align-middle">
+        Localisation approximative
+        <br>
+        <span class="ml-6 text-sm text-gray-300">Selon vos paramètres</span>
+      </label>
+
+      <label for="none" id="noneLabel" class="cursor-pointer leading-tight w-full">
+        <input type="radio" name="localisation" id="none" value="none" class="mr-2 align-middle">
+        Je ne partage pas ma localisation
+      </label>
+    </fieldset>
+
+    <button id="submit"
+      class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl shadow-md transition-all duration-200 active:scale-95">
+      Valider
+    </button>
+  </div>
+
+  <div
+    class="absolute top-10 left-1/2 -translate-x-1/2 z-[9999] w-full max-w-xs md:max-w-md p-4 bg-white rounded-xl shadow-lg border border-gray-200 flex items-center justify-around space-x-4">
+
+    <h3 class="text-xl md:text-lg font-bold text-gray-800">Localisation</h3>
+
+    <div class="rounded-full w-7 h-7 bg-green-500" id="light"></div>
+
+    <button class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">
+      Modifier
+    </button>
+  </div>
+
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/map.js"></script>
+
+</body>
+
+</html>

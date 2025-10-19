@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obbo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body class="relative h-screen bg-black overflow-hidden">
+
+    <!-- Caméra plein écran -->
+    <video id="video" autoplay playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0"></video>
+    <div id="flash" class="absolute top-0 left-0 w-full h-full z-10"></div>
+
+    <!-- Barre de localisation -->
+    <div
+        class="absolute bottom-40 left-1/2 -translate-x-1/2 w-[90%] max-w-md flex items-center justify-between px-6 py-3 bg-black/40 backdrop-blur-sm text-white rounded-2xl shadow-lg z-20">
+        <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location" class="w-6 h-6 opacity-90">
+            <span class="text-base font-medium tracking-wide">Partage de localisation</span>
+        </div>
+
+        <!-- Interrupteur on/off -->
+        <label class="switch">
+            <input type="checkbox" id="toggleLocation">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div id="overlay"
+     class="hidden fixed inset-0 bg-black/50 z-40"></div>
+
+    <!-- Formulaire de choix de localisation -->
+    <div id="locationForm"
+        class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-black/80 backdrop-blur-md text-white rounded-2xl shadow-lg px-6 py-4 space-y-4 z-50">
+        <h3 class="text-lg font-semibold text-center mb-2">Choisissez votre type de localisation</h3>
+
+        <fieldset id="localisationFieldset" class="flex flex-col items-start space-y-4 text-left">
+            <label for="exact" class="cursor-pointer leading-tight w-full">
+                <input type="radio" name="localisation" id="exact" value="exact" class="mr-2 align-middle">
+                Localisation exacte
+                <br>
+                <span class="ml-6 text-sm text-gray-300">Valable 24h</span>
+            </label>
+
+            <label for="approx" class="cursor-pointer leading-tight w-full">
+                <input type="radio" name="localisation" id="approx" value="approx" class="mr-2 align-middle">
+                Localisation approximative
+                <br>
+                <span class="ml-6 text-sm text-gray-300">Selon vos paramètres</span>
+            </label>
+
+            <label for="none" id="noneLabel" class="cursor-pointer leading-tight w-full">
+                <input type="radio" name="localisation" id="none" value="none" class="mr-2 align-middle">
+                Je ne partage pas ma localisation
+            </label>
+        </fieldset>
+
+        <button id="submit"
+            class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl shadow-md transition-all duration-200 active:scale-95">
+            Valider
+        </button>
+    </div>
+
+    <!-- Bouton central -->
+    <button id="snapButton" onclick="takephoto()"
+        class="absolute bottom-16 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-white/20 border-[6px] border-gray-300 shadow-lg transition-transform duration-100 z-30">
+    </button>
+
+    <canvas id="canvas" class="hidden"></canvas>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

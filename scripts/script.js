@@ -86,9 +86,3 @@ function setCookie(name, value) {
   dateExpiration.setDate(dateExpiration.getDate() + 1);
   document.cookie = `${name}=${value}; expires=${dateExpiration.toUTCString()}; path=/`;
 }
-
-function preloadCookies() {
-  if (!getCookie("localisation")) setCookie("localisation", "none");
-}
-
-document.addEventListener("DOMContentLoaded", preloadCookies);

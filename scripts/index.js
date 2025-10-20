@@ -10,7 +10,6 @@ submitBtn.addEventListener("click", ()=>{
     const selectedValue = getSelectedLocalisation();
     if(!selectedValue) alert("Veuillez sélectionner une localisation !");
     else{
-        alert("Localisation : " + selectedValue);
         setCookie("localisation", selectedValue);
         if(selectedValue === "none") toggleLocation.checked = false;
         locationFormAltern();

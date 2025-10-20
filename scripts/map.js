@@ -1,4 +1,6 @@
 let light = document.getElementById('light');
+let locationForm = document.getElementById('locationForm');
+let submit = document.getElementById('SubmitBtn');
 
 function getLocalisation() {
     if ("geolocation" in navigator) {
@@ -84,11 +86,11 @@ function getVille(lat, lon) {
         });
 }
 
-function SetLight(){
-    switch (getCookie('localisation')){
-        case 'none' : light.classList.add('bg-stone-300');
-        case 'approx' : light.classList.add('bg-orange-500');
-        case 'exact' : light.classList.add('bg-lime-500');
+function SetLight() {
+    switch (getCookie('localisation')) {
+        case 'none': light.classList.add('bg-stone-300');
+        case 'approx': light.classList.add('bg-orange-500');
+        case 'exact': light.classList.add('bg-lime-500');
     }
 }
 

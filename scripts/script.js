@@ -86,3 +86,15 @@ function setCookie(name, value) {
   dateExpiration.setDate(dateExpiration.getDate() + 1);
   document.cookie = `${name}=${value}; expires=${dateExpiration.toUTCString()}; path=/`;
 }
+
+function SetLight() {
+    switch (getCookie('localisation')) {
+        case 'none': light.classList.add('bg-stone-300');
+        case 'approx': light.classList.add('bg-orange-500');
+        case 'exact': light.classList.add('bg-lime-500');
+    }
+}
+
+function preloadCookies(loc) {
+  if (!getCookie("localisation")) location.href = loc;
+}

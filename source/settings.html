@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Obbo - Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-red-100 relative overflow-hidden">
+
+    <!-- Effet de fond flou -->
+    <div class="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+
+    <!-- Conteneur principal -->
+    <main
+        class="relative bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl px-12 py-10 w-[90%] max-w-lg z-10 text-center font-serif">
+
+        <!-- Titre -->
+        <header class="mb-6 inline-flex items-center" onclick="location.href='../index.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-12">
+                <path fill-rule="evenodd"
+                    d="M16.5 3.75a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5V15a.75.75 0 0 0-1.5 0v3.75a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5.25a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V9A.75.75 0 1 0 9 9V5.25a1.5 1.5 0 0 1 1.5-1.5h6ZM5.78 8.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 0 0 1.06-1.06l-1.72-1.72H15a.75.75 0 0 0 0-1.5H4.06l1.72-1.72a.75.75 0 0 0 0-1.06Z"
+                    clip-rule="evenodd" />
+            </svg>
+            <h1 class="text-3xl font-bold text-gray-800">Mes données & confidentialité</h1>
+        </header>
+
+        <!-- Formulaire -->
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <div class="inline-flex">
+                <p id="loc" class="text-xl pr-4">Localisation :</p>
+                <div class="rounded-full w-7 h-7" id="light"></div>
+            </div>
+            <button class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition"
+                onclick="location.href='locationRequest.html'">Modifier</button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Partage Actuel : Amis(0)</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Voir</button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Durée de conservation : 24h</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Modifier</button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Partage Actuel : Amis(0)</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Modifier</button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Avec qui partager votre loc</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Choisir</button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3 py-5 my-5 border-y-4">
+            <p class="text-xl">Historique</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Voir</button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Télécharger mes données</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Télécharger ></button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Supprimer mes localisations</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Supprimer ></button>
+        </div>
+        <div class="inline-block inline-flex justify-between w-full p-3">
+            <p class="text-xl">Correction des données</p>
+            <button
+                class="px-3 py-1 bg-black text-white text-xl md:text-base rounded hover:bg-gray-900 transition">Demander ></button>
+        </div>
+
+
+        <!-- Liens en bas -->
+        <footer class="mt-10 text-blue-600 text-sm space-x-8">
+            <a href="#" class="underline hover:text-blue-800 transition">En savoir plus sur la gestion des données</a>
+            <a href="#" class="underline hover:text-blue-800 transition">FAQ</a>
+        </footer>
+    </main>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/settings.js"></script>
+</body>
+
+</html>
